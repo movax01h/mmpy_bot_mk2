@@ -6,9 +6,9 @@ from typing import Dict, List, Optional, Sequence, Union
 import mattermostautodriver
 from aiohttp.client import ClientSession
 
-from mmpy_bot.threadpool import ThreadPool
-from mmpy_bot.webhook_server import WebHookServer
-from mmpy_bot.wrappers import Message, WebHookEvent
+from mmpy_bot_mk2.threadpool import ThreadPool
+from mmpy_bot_mk2.webhook_server import WebHookServer
+from mmpy_bot_mk2.wrappers import Message, WebHookEvent
 
 
 class Driver(mattermostautodriver.Driver):

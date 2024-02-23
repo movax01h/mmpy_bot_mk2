@@ -5,12 +5,17 @@ from unittest import mock
 import click
 import pytest
 
-from mmpy_bot import ExamplePlugin, Settings, listen_to
-from mmpy_bot.driver import Driver
-from mmpy_bot.function import Function, MessageFunction, WebHookFunction, listen_webhook
-from mmpy_bot.plugins import PluginManager
-from mmpy_bot.webhook_server import NoResponse
-from mmpy_bot.wrappers import WebHookEvent
+from mmpy_bot_mk2 import ExamplePlugin, Settings, listen_to
+from mmpy_bot_mk2.driver import Driver
+from mmpy_bot_mk2.function import (
+    Function,
+    MessageFunction,
+    WebHookFunction,
+    listen_webhook,
+)
+from mmpy_bot_mk2.plugins import PluginManager
+from mmpy_bot_mk2.webhook_server import NoResponse
+from mmpy_bot_mk2.wrappers import WebHookEvent
 
 from .event_handler_test import BOT_ID, create_message
 
@@ -142,7 +147,7 @@ class TestMessageFunction:
             f(create_message(), "-f --arg2=no --nonexistent-arg")
             mock_function.assert_called_once()
 
-    @mock.patch("mmpy_bot.driver.Driver.user_id", BOT_ID)
+    @mock.patch("mmpy_bot_mk2.driver.Driver.user_id", BOT_ID)
     def test_needs_mention(self):  # noqa
         wrapped = mock.create_autospec(example_listener)
         wrapped.__qualname__ = "wrapped"
@@ -163,7 +168,7 @@ class TestMessageFunction:
         f(create_message(mentions=[], channel_type="D"))
         wrapped.assert_called_once()
 
-    @mock.patch("mmpy_bot.driver.Driver.user_id", BOT_ID)
+    @mock.patch("mmpy_bot_mk2.driver.Driver.user_id", BOT_ID)
     def test_direct_only(self):
         wrapped = mock.create_autospec(example_listener)
         wrapped.__qualname__ = "wrapped"
@@ -334,7 +339,7 @@ class TestWebHookFunction:
 
             # Asyncio helper to emulate running from async function
             async def run():
-                await f(event)
+                await f(event)  # type: ignore
 
             asyncio.run(run())
             # We expect the WebHookFunction to automatically respond NoResponse
@@ -371,7 +376,7 @@ class TestWebHookFunction:
 
             # Asyncio helper to emulate running from async function
             async def run():
-                await f(event)
+                await f(event)  # type: ignore
 
             asyncio.run(run())
             # We expect the WebHookFunction to not respond anything, since the function

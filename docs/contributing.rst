@@ -10,16 +10,14 @@ Setup your environment
 We recommend using `venv <https://docs.python.org/3.8/library/venv.html>`_ to keep your development environment isolated from your base Python environment. It is part of Python by default.
 
 
-#. Clone the mmpy_bot repository, setup your virtual environment and install
+#. Clone the mmpy_bot_mk2 repository, setup your venv and install
    the requirements:
 
     .. code-block:: bash
 
-        $ git clone https://github.com/attzonko/mmpy_bot.git
-        $ cd mmpy_bot
-        $ python3 -m venv venv
-        $ source venv/bin/activate
-        $ pip install -e ".[dev]"
+        $ git clone https://github.com/movax01h/mmpy_bot_mk2.git
+        $ cd mmpy_bot_mk2
+        $ make install
 
 #. Spin up the Mattermost container (Podman or Docker required):
 
@@ -29,21 +27,21 @@ We recommend using `venv <https://docs.python.org/3.8/library/venv.html>`_ to ke
 
 
 #. In order to run the bot, it is advised to use an entrypoint Python file which defines your Mattermost server and bot account settings,
-   as well as importing any custom plugins you may create. See the provided `entrypoint.py <https://github.com/attzonko/mmpy_bot/blob/main/entrypoint.py>`_  as a reference.
-   To run your bot inside a docker container (not necessary, you can also just run `python entrypoint.py`) you can use the provided `docker-compose file <https://github.com/attzonko/mmpy_bot/blob/main/docker-compose.yml>`_.
+   as well as importing any custom plugins you may create. See the provided `entrypoint.py <https://github.com/movax01h/mmpy_bot_mk2/blob/main/entrypoint.py>`_  as a reference.
+   To run your bot inside a docker container (not necessary, you can also just run `python entrypoint.py`) you can use the provided `docker-compose file <https://github.com/movax01h/mmpy_bot_mk2/blob/main/docker-compose.yml>`_.
 
 
 Testing
 =======
 
-mmpy_bot develops all tests based on pytest. If you need to add your own
+mmpy_bot_mk2 develops all tests based on pytest. If you need to add your own
 tests and run tests, please install the dev requirements.
 
     .. code-block:: bash
 
         $ pip install -r dev-requirements.txt
 
-All the tests are put in ``mmpy_bot\tests``.
+All the tests are put in ``mmpy_bot_mk2\tests``.
 There are two test packages: :code:`unit_tests` and
 :code:`integration_tests`.
 
@@ -139,12 +137,12 @@ Set necessary configuration as described above, and run:
 
     .. code-block:: bash
 
-        $ py.test --cov=mmpy_bot tests\
+        $ py.test --cov=mmpy_bot_mk2 tests\
 
 It automatically runs tests and measures code coverage of modules under
-mmpy_bot root dir. Using "--cov-report" parameter to write report into
+mmpy_bot_mk2 root dir. Using "--cov-report" parameter to write report into
 "cov_html" folder by html format.
 
     .. code-block:: bash
 
-        py.test --cov-report html:logs\cov_html --cov=mmpy_bot tests\
+        py.test --cov-report html:logs\cov_html --cov=mmpy_bot_mk2 tests\

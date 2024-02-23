@@ -14,11 +14,11 @@ Installation
 
 PyPi (pip)
 ##########
-The recommended method to install `mmpy_bot` is via pip:
+The recommended method to install `mmpy_bot_mk2` is via pip:
 
 .. code-block:: python
 
-    pip install -U mmpy_bot
+    pip install -U mmpy_bot_mk2
 
 Git Repo
 ########
@@ -26,7 +26,7 @@ Git Repo
 
     .. code-block:: bash
 
-        $ git clone git@github.com:attzonko/mmpy_bot.git
+        $ git clone git@github.com:movax01h/mmpy_bot_mk2.git
 
 #. Install requirements:
 
@@ -44,7 +44,7 @@ look something like this:
 
         #!/usr/bin/env python
 
-        from mmpy_bot import Bot, Settings, ExamplePlugin, WebHookExample
+        from mmpy_bot_mk2 import Bot, Settings, ExamplePlugin, WebHookExample
         # from my_plugin import MyPlugin  <== Example of importing your own plugin, don't forget to add it to the plugins list.
 
         bot = Bot(
@@ -60,13 +60,13 @@ look something like this:
         bot.run()
 
 You can then simply launch the bot with `python entrypoint.py`.
-For more information on configuring bot settings and plugins, please see `settings.py <https://github.com/attzonko/mmpy_bot/blob/main/mmpy_bot/settings.py>`_ and the :ref:`plugins <plugins>` page.
+For more information on configuring bot settings and plugins, please see `settings.py <https://github.com/movax01h/mmpy_bot_mk2/blob/main/mmpy_bot/settings.py>`_ and the :ref:`plugins <plugins>` page.
 
 Container
 #########
 
-A container image is available at `jneeven/mmpy_bot
-<https://hub.docker.com/r/jneeven/mmpy_bot>`_.
+A container image is available at `movax01h/mmpy_bot_mk2
+<https://hub.docker.com/r/movax01h/mmpy_bot_mk2>`_.
 Using your preferred container management software (Docker/Podman), you can
 pull the image and run it using the following steps:
 
@@ -74,16 +74,16 @@ pull the image and run it using the following steps:
 
     .. code-block:: bash
 
-        $ podman pull docker.io/jneeven/mmpy_bot
+        $ podman pull docker.io/movax01h/mmpy_bot_mk2
 
 #. Run the container with defined environment variables:
 
     .. code-block:: bash
 
-        $ podman run -d --name=mmpy_bot --network=host -e MATTERMOST_URL=<mattermost_server_url> -e MATTERMOST_PORT=<mattermost_server_port> -e BOT_TOKEN=<bot_token> docker.io/jneeven/mmpy_bot
+        $ podman run -d --name=mmpy_bot_mk2 --network=host -e MATTERMOST_URL=<mattermost_server_url> -e MATTERMOST_PORT=<mattermost_server_port> -e BOT_TOKEN=<bot_token> docker.io/jneeven/mmpy_bot
 
 You can also find an example `docker-compose.yml` file `here
-<https://github.com/attzonko/mmpy_bot/blob/master/docker-compose.yml>`_.
+<https://github.com/movax01h/mmpy_bot_mk2/blob/master/docker-compose.yml>`_.
 
 Customizing your bot
 ####################
@@ -92,13 +92,13 @@ Getting your bot running is only the beginning. The real fun begins with
 writing plugins to get it functioning exactly how you want it! Head on over
 to the :ref:`plugins <plugins>` page to get started.
 
-Fetch mmpy_bot version
-######################
+Fetch mmpy_bot_mk2 version
+##########################
 
-To check your installed version of `mmpy_bot`, simply open a Python
+To check your installed version of `mmpy_bot_mk2`, simply open a Python
 interpreter and run the following commands:
 
     .. code-block:: python
 
-        import mmpy_bot
-        print(mmpy_bot.__version__)
+        import mmpy_bot_mk2
+        print(mmpy_bot_mk2.__version__)

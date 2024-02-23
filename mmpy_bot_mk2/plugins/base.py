@@ -7,11 +7,11 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Sequence, Union
 
-from mmpy_bot.driver import Driver
-from mmpy_bot.function import Function, MessageFunction, WebHookFunction
-from mmpy_bot.settings import Settings
-from mmpy_bot.utils import split_docstring
-from mmpy_bot.wrappers import EventWrapper
+from mmpy_bot_mk2.driver import Driver
+from mmpy_bot_mk2.function import Function, MessageFunction, WebHookFunction
+from mmpy_bot_mk2.settings import Settings
+from mmpy_bot_mk2.utils import split_docstring
+from mmpy_bot_mk2.wrappers import EventWrapper
 
 log = logging.getLogger("mmpy.plugin_base")
 

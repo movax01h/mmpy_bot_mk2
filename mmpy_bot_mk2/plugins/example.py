@@ -6,10 +6,10 @@ from pathlib import Path
 import click
 import mattermostautodriver
 
-from mmpy_bot.function import listen_to
-from mmpy_bot.plugins.base import Plugin
-from mmpy_bot.scheduler import schedule
-from mmpy_bot.wrappers import Message
+from mmpy_bot_mk2.function import listen_to
+from mmpy_bot_mk2.plugins.base import Plugin
+from mmpy_bot_mk2.scheduler import schedule
+from mmpy_bot_mk2.wrappers import Message
 
 
 class ExamplePlugin(Plugin):

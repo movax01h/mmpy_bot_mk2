@@ -1,4 +1,4 @@
-mmpy_bot
+mmpy_bot_mk2
 ==============
 
 A chat bot for Mattermost
@@ -25,8 +25,8 @@ Feel free to submit issues_, pull requests are also welcome.
 
 Good contributions follow :ref:`simple guidelines <contributing>`
 
-.. _Github: https://github.com/attzonko/mmpy_bot
-.. _issues: https://github.com/attzonko/mmpy_bot/issues
+.. _Github: https://github.com/movax01h/mmpy_bot_mk2
+.. _issues: https://github.com/movax01h/mmpy_bot_mk2/issues
 
 .. |br| raw:: html
 

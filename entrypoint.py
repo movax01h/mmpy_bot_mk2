@@ -1,4 +1,4 @@
-from mmpy_bot import Bot, ExamplePlugin, Settings, WebHookExample
+from mmpy_bot_mk2 import Bot, ExamplePlugin, Settings, WebHookExample
 
 bot = Bot(
     # Either specify your settings here or use environment variables to override them.

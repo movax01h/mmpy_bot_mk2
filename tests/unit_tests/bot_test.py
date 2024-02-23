@@ -2,8 +2,8 @@ from unittest import mock
 
 import pytest
 
-from mmpy_bot import Bot, ExamplePlugin, Settings
-from mmpy_bot.plugins import PluginManager
+from mmpy_bot_mk2 import Bot, ExamplePlugin, Settings
+from mmpy_bot_mk2.plugins import PluginManager
 
 from ..integration_tests.utils import TestPlugin
 
@@ -11,7 +11,7 @@ from ..integration_tests.utils import TestPlugin
 @pytest.fixture(scope="function")
 def bot():
     # Patch login to avoid sending requests to the internet
-    with mock.patch("mmpy_bot.driver.Driver.login") as login:
+    with mock.patch("mmpy_bot_mk2.driver.Driver.login") as login:
         bot = Bot(plugins=[ExamplePlugin()], settings=Settings(DEBUG=True))
         login.assert_called_once()
         yield bot
@@ -19,7 +19,7 @@ def bot():
 
 
 class TestBot:
-    @mock.patch("mmpy_bot.driver.Driver.login")
+    @mock.patch("mmpy_bot_mk2.driver.Driver.login")
     def test_init(self, login):
         # Create some plugins and mock their initialize method so we can check calls
         plugins = [ExamplePlugin(), TestPlugin()]
@@ -41,7 +41,9 @@ class TestBot:
         for plugin in plugins:
             assert plugin.initialize.called_once_with(bot.driver)
 
-    @mock.patch.multiple("mmpy_bot.Plugin", on_start=mock.DEFAULT, on_stop=mock.DEFAULT)
+    @mock.patch.multiple(
+        "mmpy_bot_mk2.Plugin", on_start=mock.DEFAULT, on_stop=mock.DEFAULT
+    )
     def test_run(self, bot, **mocks):
         with mock.patch.object(bot.driver, "init_websocket") as init_websocket:
             bot.run()

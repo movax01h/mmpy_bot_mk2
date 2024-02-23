@@ -2,7 +2,7 @@ import time
 
 import pytest
 
-from mmpy_bot.driver import ThreadPool
+from mmpy_bot_mk2.driver import ThreadPool
 
 
 @pytest.fixture(scope="function")

@@ -4,8 +4,8 @@ import threading
 import time
 from queue import Queue
 
-from mmpy_bot.scheduler import default_scheduler
-from mmpy_bot.webhook_server import WebHookServer
+from mmpy_bot_mk2.scheduler import default_scheduler
+from mmpy_bot_mk2.webhook_server import WebHookServer
 
 log = logging.getLogger("mmpy.threadpool")
 

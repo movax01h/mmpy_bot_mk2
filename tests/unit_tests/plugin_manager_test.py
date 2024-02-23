@@ -3,9 +3,9 @@ from unittest import mock
 
 import click
 
-from mmpy_bot import Plugin, Settings, listen_to, listen_webhook
-from mmpy_bot.driver import Driver
-from mmpy_bot.plugins import PluginManager
+from mmpy_bot_mk2 import Plugin, Settings, listen_to, listen_webhook
+from mmpy_bot_mk2.driver import Driver
+from mmpy_bot_mk2.plugins import PluginManager
 
 
 # Used in the plugin tests below

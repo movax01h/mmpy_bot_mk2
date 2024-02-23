@@ -1,10 +1,14 @@
-[![PyPI](https://badge.fury.io/py/mmpy-bot.svg)](https://pypi.org/project/mmpy-bot/)
-[![Maintainability](https://api.codeclimate.com/v1/badges/809c8d66aea982d9e3da/maintainability)](https://codeclimate.com/github/attzonko/mmpy_bot/maintainability)
-[![Python Support](https://img.shields.io/pypi/pyversions/mmpy-bot.svg)](https://pypi.org/project/mmpy-bot/)
-[![Mattermost](https://img.shields.io/badge/mattermost-4.0+-blue.svg)](http://www.mattermost.org)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://pypi.org/project/mmpy-bot/)
+Forked from [attzonko/mmpy_bot]
 
-Documentation available at [Read the Docs](https://mmpy-bot.readthedocs.org/).
+
+[![PyPI](https://badge.fury.io/py/mmpy-bot-mk2.svg)](https://pypi.org/project/mmpy-bot-mk2/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/809c8d66aea982d9e3da/maintainability)](https://codeclimate.com/github/movax01h/mmpy_bot_mk2/maintainability)
+[![Python Support](https://img.shields.io/pypi/pyversions/mmpy-bot-mk2.svg)](https://pypi.org/project/mmpy-bot-mk2/)
+[![Mattermost](https://img.shields.io/badge/mattermost-4.0+-blue.svg)](http://www.mattermost.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://pypi.org/project/mmpy-bot-mk2/)
+
+
+Documentation available at [Read the Docs](https://mmpy-bot-mk2.readthedocs.org/).
 
 
 ## Description
@@ -28,10 +32,10 @@ For Python 2 and Python3 < 3.8 support, please use versions v1.3.9 or lower.
 
 ## Compatibility
 
-|    Mattermost    |  mmpy_bot   |
-|------------------|:-----------:|
-|     >= 4.0       |  > 1.2.0    |
-|     <  4.0       | unsupported |
+|    Mattermost    |  mmpy_bot_mk2   |
+|------------------|:---------------:|
+|     >= 4.0       |  > 1.2.0        |
+|     <  4.0       | unsupported     |
 
 
 ## Installation
@@ -72,7 +76,7 @@ Example `my_bot.py`:
 ```python
 #!/usr/bin/env python
 
-from mmpy_bot import Bot, Settings
+from mmpy_bot_mk2 import Bot, Settings
 from my_plugin import MyPlugin
 
 bot = Bot(
@@ -90,11 +94,10 @@ bot.run()
 
 Set the executable bit on the entrypoint file (i.e. `chmod +x my_bot.py`) and start your bot from the command prompt. Now you can talk to your bot in your Mattermost client!
 
-In order to get the most out of your bot, you will need to write your own plugins. Refer to the [Plugins Documentation](https://mmpy-bot.readthedocs.io/en/latest/plugins.html) to get started.
+In order to get the most out of your bot, you will need to write your own plugins. Refer to the [Plugins Documentation](https://mmpy-bot-mk2.readthedocs.io/en/latest/plugins.html) to get started.
 
 ### Talk to us
 
-The primary channel for communication is [GitHub](https://github.com/attzonko/mmpy_bot)
-via [Issues](https://github.com/attzonko/mmpy_bot/issues)
-or [Pull requests](https://github.com/attzonko/mmpy_bot/pulls)
-but you may also find some of us in [Discord](https://discord.gg/tWe5nVpNRB) for some real-time interaction.
+The primary channel for communication is [GitHub](https://github.com/movax01h/mmpy_bot_mk2)
+via [Issues](https://github.com/movax01h/mmpy_bot_mk2/issues)
+or [Pull requests](https://github.com/movax01h/mmpy_bot_mk2/pulls)

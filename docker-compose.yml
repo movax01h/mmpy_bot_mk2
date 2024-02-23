@@ -2,9 +2,9 @@ version: "3.7"
 
 services:
   app:
-    # This docker-compose file specifies a mmpy_bot
+    # This docker-compose file specifies a mmpy_bot_mk2
     # running locally for development/test purposes
-    container_name: "mmpy_bot"
+    container_name: "mmpy_bot_mk2"
     build: .
     # network_mode and extra_hosts should only be necessary
     # if mattermost is running on the host machine

@@ -3,17 +3,17 @@ import logging
 import sys
 from typing import List, Optional, Union
 
-from mmpy_bot.driver import Driver
-from mmpy_bot.event_handler import EventHandler
-from mmpy_bot.plugins import (
+from mmpy_bot_mk2.driver import Driver
+from mmpy_bot_mk2.event_handler import EventHandler
+from mmpy_bot_mk2.plugins import (
     ExamplePlugin,
     HelpPlugin,
     Plugin,
     PluginManager,
     WebHookExample,
 )
-from mmpy_bot.settings import Settings
-from mmpy_bot.webhook_server import WebHookServer
+from mmpy_bot_mk2.settings import Settings
+from mmpy_bot_mk2.webhook_server import WebHookServer
 
 log = logging.getLogger("mmpy.bot")
 

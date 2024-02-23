@@ -2,11 +2,11 @@ import asyncio
 import json
 from unittest import mock
 
-from mmpy_bot import ExamplePlugin, Message, Settings, WebHookExample
-from mmpy_bot.driver import Driver
-from mmpy_bot.event_handler import EventHandler
-from mmpy_bot.plugins import PluginManager
-from mmpy_bot.wrappers import WebHookEvent
+from mmpy_bot_mk2 import ExamplePlugin, Message, Settings, WebHookExample
+from mmpy_bot_mk2.driver import Driver
+from mmpy_bot_mk2.event_handler import EventHandler
+from mmpy_bot_mk2.plugins import PluginManager
+from mmpy_bot_mk2.wrappers import WebHookEvent
 
 BOT_ID = "qmw86q7qsjriura9jos75i4why"
 
@@ -59,7 +59,7 @@ def create_message(
 
 
 class TestEventHandler:
-    @mock.patch("mmpy_bot.driver.Driver.username", new="my_username")
+    @mock.patch("mmpy_bot_mk2.driver.Driver.username", new="my_username")
     def test_init(self):
         handler = EventHandler(
             Driver(),
@@ -70,7 +70,7 @@ class TestEventHandler:
         assert handler._name_matcher.match("@my_username are you there?")
         assert not handler._name_matcher.match("@other_username are you there?")
 
-    @mock.patch("mmpy_bot.driver.Driver.username", new="my_username")
+    @mock.patch("mmpy_bot_mk2.driver.Driver.username", new="my_username")
     def test_should_ignore(self):
         handler = EventHandler(
             Driver(),
@@ -93,7 +93,7 @@ class TestEventHandler:
         )
         assert not handler._should_ignore(create_message(sender_name="my_username"))
 
-    @mock.patch("mmpy_bot.event_handler.EventHandler._handle_post")
+    @mock.patch("mmpy_bot_mk2.event_handler.EventHandler._handle_post")
     def test_handle_event(self, handle_post):
         handler = EventHandler(Driver(), Settings(), plugin_manager=PluginManager([]))
         # This event should trigger _handle_post
@@ -103,7 +103,7 @@ class TestEventHandler:
 
         handle_post.assert_called_once_with(create_message().body)
 
-    @mock.patch("mmpy_bot.driver.Driver.username", new="my_username")
+    @mock.patch("mmpy_bot_mk2.driver.Driver.username", new="my_username")
     def test_handle_post(self):
         # Create an initialized plugin so its listeners are registered
         plugin = ExamplePlugin()

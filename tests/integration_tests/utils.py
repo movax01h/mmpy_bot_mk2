@@ -5,7 +5,7 @@ from typing import Dict
 import pytest
 from filelock import FileLock
 
-from mmpy_bot import (
+from mmpy_bot_mk2 import (
     Bot,
     ExamplePlugin,
     Message,
@@ -14,7 +14,7 @@ from mmpy_bot import (
     WebHookExample,
     listen_to,
 )
-from mmpy_bot.driver import Driver
+from mmpy_bot_mk2.driver import Driver
 
 OFF_TOPIC_ID = "ahzqezf33jny9mpst758dnaahw"  # Channel id
 TEAM_ID = "h6aje7ujgpggjrtik6f3m8fjah"

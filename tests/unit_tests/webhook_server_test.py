@@ -5,9 +5,9 @@ import time
 import pytest
 from aiohttp import ClientSession
 
-from mmpy_bot import Settings
-from mmpy_bot.threadpool import ThreadPool
-from mmpy_bot.webhook_server import NoResponse, WebHookServer
+from mmpy_bot_mk2 import Settings
+from mmpy_bot_mk2.threadpool import ThreadPool
+from mmpy_bot_mk2.webhook_server import NoResponse, WebHookServer
 
 
 @pytest.fixture(scope="function")

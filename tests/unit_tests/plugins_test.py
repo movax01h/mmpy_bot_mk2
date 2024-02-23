@@ -1,9 +1,9 @@
 import asyncio
 from unittest import mock
 
-from mmpy_bot import Plugin, Settings, listen_to
-from mmpy_bot.driver import Driver
-from mmpy_bot.plugins import PluginManager
+from mmpy_bot_mk2 import Plugin, Settings, listen_to
+from mmpy_bot_mk2.driver import Driver
+from mmpy_bot_mk2.plugins import PluginManager
 
 from .event_handler_test import create_message
 
@@ -23,7 +23,7 @@ class FakePlugin(Plugin):
 
 
 class TestPlugin:
-    @mock.patch("mmpy_bot.driver.ThreadPool.add_task")
+    @mock.patch("mmpy_bot_mk2.driver.ThreadPool.add_task")
     def test_call_function(self, add_task):
         p = FakePlugin()
         # Functions only listen for events when initialized via PluginManager

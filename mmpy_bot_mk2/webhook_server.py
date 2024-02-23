@@ -6,7 +6,7 @@ from typing import Optional
 
 from aiohttp import web
 
-from mmpy_bot.wrappers import ActionEvent, WebHookEvent
+from mmpy_bot_mk2.wrappers import ActionEvent, WebHookEvent
 
 
 class NoResponse:

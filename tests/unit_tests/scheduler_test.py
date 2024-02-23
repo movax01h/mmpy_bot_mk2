@@ -7,8 +7,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from mmpy_bot import schedule
-from mmpy_bot.threadpool import ThreadPool
+from mmpy_bot_mk2 import schedule
+from mmpy_bot_mk2.threadpool import ThreadPool
 
 
 def test_once():

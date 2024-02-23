@@ -1,6 +1,6 @@
 import os
 
-from mmpy_bot import Settings
+from mmpy_bot_mk2 import Settings
 
 
 def test_constructor():

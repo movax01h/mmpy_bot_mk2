@@ -4,11 +4,11 @@ import logging
 import queue
 import re
 
-from mmpy_bot.driver import Driver
-from mmpy_bot.plugins import PluginManager
-from mmpy_bot.settings import Settings
-from mmpy_bot.webhook_server import NoResponse
-from mmpy_bot.wrappers import Message, WebHookEvent
+from mmpy_bot_mk2.driver import Driver
+from mmpy_bot_mk2.plugins import PluginManager
+from mmpy_bot_mk2.settings import Settings
+from mmpy_bot_mk2.webhook_server import NoResponse
+from mmpy_bot_mk2.wrappers import Message, WebHookEvent
 
 log = logging.getLogger("mmpy.event_handler")
 

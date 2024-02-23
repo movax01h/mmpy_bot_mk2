@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Semantic version of the form M.m.p[.devXYZ]'
+        description: "Semantic version of the form M.m.p[.devXYZ]"
         required: true
 
 jobs:
@@ -16,12 +16,12 @@ jobs:
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
       - name: Install requirements
         run: pip install --upgrade setuptools twine wheel
       - name: Create wheel
         run: |
-          echo ${{ github.event.inputs.version }} > mmpy_bot/version.txt
+          echo ${{ github.event.inputs.version }} > mmpy_bot_mk2/version.txt
           python setup.py bdist_wheel
       - name: Upload wheel
         run: twine upload dist/* -u __token__ -p '${{ secrets.PYPI_API_TOKEN }}' --verbose

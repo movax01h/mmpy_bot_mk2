@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from mmpy_bot.driver import Driver
-from mmpy_bot.function import listen_to
-from mmpy_bot.plugins.base import Plugin, PluginManager
-from mmpy_bot.settings import Settings
-from mmpy_bot.wrappers import Message
+from mmpy_bot_mk2.driver import Driver
+from mmpy_bot_mk2.function import listen_to
+from mmpy_bot_mk2.plugins.base import Plugin, PluginManager
+from mmpy_bot_mk2.settings import Settings
+from mmpy_bot_mk2.wrappers import Message
 
 
 def _custom_help_sort(rec):

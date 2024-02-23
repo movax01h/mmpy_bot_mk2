@@ -10,12 +10,12 @@ from typing import TYPE_CHECKING, Callable, Optional, Sequence, Union
 
 import click
 
-from mmpy_bot.utils import completed_future
-from mmpy_bot.webhook_server import NoResponse
-from mmpy_bot.wrappers import Message, WebHookEvent
+from mmpy_bot_mk2.utils import completed_future
+from mmpy_bot_mk2.webhook_server import NoResponse
+from mmpy_bot_mk2.wrappers import Message, WebHookEvent
 
 if TYPE_CHECKING:
-    from mmpy_bot.plugins import Plugin
+    from mmpy_bot_mk2.plugins import Plugin
 
 
 log = logging.getLogger("mmpy.function")

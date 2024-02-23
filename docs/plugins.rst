@@ -7,14 +7,14 @@ use cases, which can be achieved through custom plugins.
 Writing your first plugin
 -------------------------
 
-#. To demonstrate how easy it is to create a plugin for `mmpy_bot`, let's
+#. To demonstrate how easy it is to create a plugin for `mmpy_bot_mk2`, let's
    write a basic plugin and run it. Start with an empty Python file and
-   import these three `mmpy_bot` modules:
+   import these three `mmpy_bot_mk2` modules:
 
     .. code-block:: python
 
-        from mmpy_bot import Plugin, listen_to
-        from mmpy_bot import Message
+        from mmpy_bot_mk2 import Plugin, listen_to
+        from mmpy_bot_mk2 import Message
 
 #. Now create a Class with the name of your plugin, subclassing `Plugin`:
 
@@ -41,7 +41,7 @@ Writing your first plugin
 
         #!/usr/bin/env python
 
-        from mmpy_bot import Bot, Settings
+        from mmpy_bot_mk2 import Bot, Settings
         from my_plugin import MyPlugin
 
         bot = Bot(
@@ -71,7 +71,7 @@ Further configuration
 ---------------------
 
 The below code snippets provide an insight into the functionality that can be added to the bot. For more in-depth examples,
-please refer to `./plugins/example.py <https://github.com/attzonko/mmpy_bot/blob/main/mmpy_bot/plugins/example.py>`_ and `./plugins/webhook_example.py <https://github.com/attzonko/mmpy_bot/blob/main/mmpy_bot/plugins/webhook_example.py>`_.
+please refer to `./plugins/example.py <https://github.com/movax01h/mmpy_bot_mk2/blob/main/mmpy_bot_mk2/plugins/example.py>`_ and `./plugins/webhook_example.py <https://github.com/movax01h/mmpy_bot_mk2/blob/main/mmpy_bot_mk2/plugins/webhook_example.py>`_.
 
 Implementing regular expression
 -------------------------------
@@ -171,7 +171,7 @@ described in more detail below.
 Click support
 -------------
 
-`mmpy_bot` now supports `click <https://click.palletsprojects.com/en/7.x/>`_
+`mmpy_bot_mk2` now supports `click <https://click.palletsprojects.com/en/7.x/>`_
 commands, so you can build a robust CLI-like experience if you need it. The
 example below registers a `hello_click` command that takes a positional
 argument, a keyword argument and a toggleable flag, which are automatically
@@ -203,7 +203,7 @@ the `ExamplePlugin` to see what it looks like!
 Custom help messages
 --------------------
 
-`mmpy_bot` defaults to responding to `@botname help` or `help` in a direct
+`mmpy_bot_mk2` defaults to responding to `@botname help` or `help` in a direct
 message if the `HelpPlugin` is enabled. If you wish to customize the way help
 is displayed you can subclass `HelpPlugin` and override `get_help_string`.
 If instead you want to customize which help functions are displayed but
@@ -213,7 +213,7 @@ which will return `FunctionInfo` instances. See below for an example.
 
 .. code-block:: python
 
-    from mmpy_bot.plugins import HelpPlugin
+    from mmpy_bot_mk2.plugins import HelpPlugin
 
     class MyAdminOnlyHelpPlugin(HelpPlugin):
         def get_help(self, message):
@@ -248,7 +248,7 @@ If necessary, you can also access the docstring of the plugin class with:
 
 .. code-block:: python
 
-    from mmpy_bot.utils import split_docstring
+    from mmpy_bot_mk2.utils import split_docstring
 
     head, full = split_docstring(FunctionInfo.function.plugin.__doc__)
 
@@ -257,7 +257,7 @@ plugins:
 
 .. code-block:: python
 
-    from mmpy_bot import Bot, Settings
+    from mmpy_bot_mk2 import Bot, Settings
     from my_help_plugin import MyHelpPlugin
 
     bot = Bot(
@@ -309,12 +309,12 @@ Webhook listener
 ----------------
 
 If you want to interact with your bot not only through chat messages but also through web requests (for example to implement an `interactive dialog <https://docs.mattermost.com/developer/interactive-dialogs.html>`_), you can use enable the built-in `WebHookServer`.
-In your `Settings`, make sure to set `WEBHOOK_HOST_ENABLED=True` and provide a value for `WEBHOOK_HOST_URL` and `WEBHOOK_HOST_PORT` (see `settings.py <https://github.com/attzonko/mmpy_bot/blob/main/mmpy_bot/settings.py>`_ for more info).
+In your `Settings`, make sure to set `WEBHOOK_HOST_ENABLED=True` and provide a value for `WEBHOOK_HOST_URL` and `WEBHOOK_HOST_PORT` (see `settings.py <https://github.com/movax01h/mmpy_bot_mk2/blob/main/mmpy_bot_mk2/settings.py>`_ for more info).
 Then, on your custom `Plugin` you can create a function like this:
 
 .. code-block:: python
 
-    from mmpy_bot import listen_webhook
+    from mmpy_bot_mk2 import listen_webhook
 
     @listen_webhook("ping")
     async def ping_listener(self, event: WebHookEvent):
@@ -341,13 +341,13 @@ request, you can use `Driver.respond_to_web`:
             },
         )
 
-For more information about the `WebHookServer` and its possibilities, take a look at the `WebHookExample  plugin <https://github.com/attzonko/mmpy_bot/blob/main/mmpy_bot/plugins/webhook_example.py>`_.
+For more information about the `WebHookServer` and its possibilities, take a look at the `WebHookExample  plugin <https://github.com/movax01h/mmpy_bot_mk2/blob/main/mmpy_bot_mk2/plugins/webhook_example.py>`_.
 
 
 Job scheduling
 --------------
 
-mmpy_bot integrates `schedule
+mmpy_bot_mk2 integrates `schedule
 <https://github.com/dbader/schedule/>`_ to provide in-process job scheduling.
 
 With `schedule
@@ -376,7 +376,7 @@ The `schedule
 
 `schedule
 <https://github.com/dbader/schedule/>`_ is designed for periodic jobs.
-In order to support one-time-only jobs, mmpy_bot has a monkey-patching on integrated
+In order to support one-time-only jobs, mmpy_bot_mk2 has a monkey-patching on integrated
 `schedule
 <https://github.com/dbader/schedule/>`_ package.
 
