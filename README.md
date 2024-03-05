@@ -1,4 +1,4 @@
-Forked from [attzonko/mmpy_bot]
+Forked from [attzonko/mmpy_bot](https://github.com/attzonko/mmpy_bot)
 
 
 [![PyPI](https://badge.fury.io/py/mmpy-bot-mk2.svg)](https://pypi.org/project/mmpy-bot-mk2/)

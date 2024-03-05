@@ -5,6 +5,7 @@ from typing import List, Optional, Union
 
 from mmpy_bot_mk2.driver import Driver
 from mmpy_bot_mk2.event_handler import EventHandler
+from mmpy_bot_mk2.exceptions import LoginFailed
 from mmpy_bot_mk2.plugins import (
     ExamplePlugin,
     HelpPlugin,
@@ -53,7 +54,25 @@ class Bot:
                 "connect_kw_args": {"ping_interval": None},
             }
         )
-        self.driver.login()
+        try:
+            self.driver.login()
+        except Exception as e:
+            log.error(
+                "Failed to login to Mattermost server with url: %s, port: %s, ssl_verify: %s. Error: %s",
+                self.settings.MATTERMOST_URL,
+                self.settings.MATTERMOST_PORT,
+                self.settings.SSL_VERIFY,
+                e,
+            )
+            raise LoginFailed(
+                (
+                    f"Failed to login to Mattermost server with "
+                    f"url: {self.settings.MATTERMOST_URL}, "
+                    f"port: {self.settings.MATTERMOST_PORT}, "
+                    f"ssl_verify: {self.settings.SSL_VERIFY}. "
+                    f"Error: {e}"
+                )
+            ) from e
         self.plugin_manager.initialize(self.driver, self.settings)
         self.event_handler = EventHandler(
             self.driver, settings=self.settings, plugin_manager=self.plugin_manager
